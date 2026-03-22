@@ -60,6 +60,7 @@ const zhCN = {
     // Transfer dialog
     transferTitle: "转账",
     transferDialogDesc: "仅支持平台内用户之间转账，实时到账。",
+    selectCurrency: "选择币种",
     recipientPhone: "收款人手机号",
     recipientPhonePlaceholder: "请输入对方手机号",
     recipientPhoneHint: "请输入已注册 Clawmask 的手机号",

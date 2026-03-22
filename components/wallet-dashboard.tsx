@@ -47,9 +47,16 @@ export function WalletDashboard() {
   const [dialog, setDialog] = React.useState<WalletDialog>(null)
   const [selectedChain, setSelectedChain] = React.useState("clawmask")
   const [withdrawChain, setWithdrawChain] = React.useState("clawmask")
+  const [depositCurrency, setDepositCurrency] = React.useState("MA")
+  const [withdrawCurrency, setWithdrawCurrency] = React.useState("MA")
+  const [transferCurrency, setTransferCurrency] = React.useState("MA")
   const records = (tab === "trade" ? walletTradeRecords : walletTransferRecords) as WalletRecord[] | WalletTransferRecord[]
   const selectedChainOption = chainOptions.find((c) => c.id === selectedChain)
   const withdrawChainOption = chainOptions.find((c) => c.id === withdrawChain)
+  const currencyOptions = [
+    { id: "MA", name: "MA" },
+    { id: "KYC", name: "KYC" },
+  ]
 
   return (
     <>
@@ -309,16 +316,28 @@ export function WalletDashboard() {
           <div className="space-y-5">
             <div className="space-y-3">
               <label className="text-sm font-medium">{t.wallet.selectNetwork}</label>
-              <Select value={selectedChain} onValueChange={(value) => value && setSelectedChain(value)}>
-                <SelectTrigger className="w-fit min-w-48">
-                  <SelectValue placeholder={t.wallet.selectNetwork}>{selectedChainOption?.name}</SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  {chainOptions.map((chain) => (
-                    <SelectItem key={chain.id} value={chain.id}>{chain.name}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <div className="flex items-center gap-3">
+                <Select value={selectedChain} onValueChange={(value) => value && setSelectedChain(value)}>
+                  <SelectTrigger className="w-fit min-w-48">
+                    <SelectValue placeholder={t.wallet.selectNetwork}>{selectedChainOption?.name}</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {chainOptions.map((chain) => (
+                      <SelectItem key={chain.id} value={chain.id}>{chain.name}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Select value={depositCurrency} onValueChange={(value) => value && setDepositCurrency(value)}>
+                  <SelectTrigger className="w-fit min-w-32">
+                    <SelectValue>{depositCurrency}</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {currencyOptions.map((currency) => (
+                      <SelectItem key={currency.id} value={currency.id}>{currency.name}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
             <div className="flex items-center justify-center rounded-xl border border-dashed border-white/10 bg-black/20 p-6">
               <div className="flex flex-col items-center gap-3">
@@ -355,16 +374,28 @@ export function WalletDashboard() {
           <div className="space-y-5">
             <div className="space-y-3">
               <label className="text-sm font-medium">{t.wallet.selectNetwork}</label>
-              <Select value={withdrawChain} onValueChange={(value) => value && setWithdrawChain(value)}>
-                <SelectTrigger className="w-fit min-w-48">
-                  <SelectValue placeholder={t.wallet.selectNetwork}>{withdrawChainOption?.name}</SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  {chainOptions.map((chain) => (
-                    <SelectItem key={chain.id} value={chain.id}>{chain.name}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <div className="flex items-center gap-3">
+                <Select value={withdrawChain} onValueChange={(value) => value && setWithdrawChain(value)}>
+                  <SelectTrigger className="w-fit min-w-48">
+                    <SelectValue placeholder={t.wallet.selectNetwork}>{withdrawChainOption?.name}</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {chainOptions.map((chain) => (
+                      <SelectItem key={chain.id} value={chain.id}>{chain.name}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Select value={withdrawCurrency} onValueChange={(value) => value && setWithdrawCurrency(value)}>
+                  <SelectTrigger className="w-fit min-w-32">
+                    <SelectValue>{withdrawCurrency}</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {currencyOptions.map((currency) => (
+                      <SelectItem key={currency.id} value={currency.id}>{currency.name}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">{t.wallet.recipientAddress}</label>
@@ -412,6 +443,19 @@ export function WalletDashboard() {
               <label className="text-sm font-medium">{t.wallet.recipientPhone}</label>
               <Input placeholder={t.wallet.recipientPhonePlaceholder} type="tel" />
               <p className="text-xs text-white/40">{t.wallet.recipientPhoneHint}</p>
+            </div>
+            <div className="space-y-3">
+              <label className="text-sm font-medium">{t.wallet.selectCurrency}</label>
+              <Select value={transferCurrency} onValueChange={(value) => value && setTransferCurrency(value)}>
+                <SelectTrigger className="w-fit min-w-32">
+                  <SelectValue>{transferCurrency}</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {currencyOptions.map((currency) => (
+                    <SelectItem key={currency.id} value={currency.id}>{currency.name}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">{t.wallet.transferAmount}</label>
