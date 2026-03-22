@@ -314,11 +314,11 @@ export function WalletDashboard() {
             <DialogDescription>{t.wallet.depositDialogDesc}</DialogDescription>
           </DialogHeader>
           <div className="space-y-5">
-            <div className="space-y-3">
-              <label className="text-sm font-medium">{t.wallet.selectNetwork}</label>
-              <div className="flex items-center gap-3">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <label className="text-sm font-medium">{t.wallet.selectNetwork}</label>
                 <Select value={selectedChain} onValueChange={(value) => value && setSelectedChain(value)}>
-                  <SelectTrigger className="w-fit min-w-48">
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder={t.wallet.selectNetwork}>{selectedChainOption?.name}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
@@ -327,8 +327,11 @@ export function WalletDashboard() {
                     ))}
                   </SelectContent>
                 </Select>
+              </div>
+              <div className="space-y-3">
+                <label className="text-sm font-medium">{t.wallet.selectCurrency}</label>
                 <Select value={depositCurrency} onValueChange={(value) => value && setDepositCurrency(value)}>
-                  <SelectTrigger className="w-fit min-w-32">
+                  <SelectTrigger className="w-full">
                     <SelectValue>{depositCurrency}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
@@ -372,11 +375,11 @@ export function WalletDashboard() {
             <DialogDescription>{t.wallet.withdrawDialogDesc}</DialogDescription>
           </DialogHeader>
           <div className="space-y-5">
-            <div className="space-y-3">
-              <label className="text-sm font-medium">{t.wallet.selectNetwork}</label>
-              <div className="flex items-center gap-3">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <label className="text-sm font-medium">{t.wallet.selectNetwork}</label>
                 <Select value={withdrawChain} onValueChange={(value) => value && setWithdrawChain(value)}>
-                  <SelectTrigger className="w-fit min-w-48">
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder={t.wallet.selectNetwork}>{withdrawChainOption?.name}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
@@ -385,8 +388,11 @@ export function WalletDashboard() {
                     ))}
                   </SelectContent>
                 </Select>
+              </div>
+              <div className="space-y-3">
+                <label className="text-sm font-medium">{t.wallet.selectCurrency}</label>
                 <Select value={withdrawCurrency} onValueChange={(value) => value && setWithdrawCurrency(value)}>
-                  <SelectTrigger className="w-fit min-w-32">
+                  <SelectTrigger className="w-full">
                     <SelectValue>{withdrawCurrency}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
