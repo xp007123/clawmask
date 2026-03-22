@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  turbopack: {
+    root: "/Users/work/Documents/P.A.R.A/项目 Project/26Q1-Clawmask/App/Web",
+  },
+}
 
-export default nextConfig;
+export default nextConfig

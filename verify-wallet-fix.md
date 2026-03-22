@@ -1,0 +1,155 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "clawmask" [ref=e433] [cursor=pointer]:
+            - /url: /
+            - img [ref=e10]
+            - generic [ref=e12]: clawmask
+      - generic [ref=e13]:
+        - list [ref=e16]:
+          - listitem [ref=e17]:
+            - link "首页" [ref=e434] [cursor=pointer]:
+              - /url: /
+              - img [ref=e19]
+              - generic [ref=e21]: 首页
+          - listitem [ref=e22]:
+            - link "币安智能体" [ref=e435] [cursor=pointer]:
+              - /url: /agent/binance
+              - img [ref=e24]
+              - generic [ref=e27]: 币安智能体
+          - listitem [ref=e28]:
+            - link "欧易智能体" [ref=e436] [cursor=pointer]:
+              - /url: /agent/okx
+              - img [ref=e30]
+              - generic [ref=e33]: 欧易智能体
+          - listitem [ref=e34]:
+            - link "MADEX 智能体" [ref=e437] [cursor=pointer]:
+              - /url: /agent/madex
+              - img [ref=e36]
+              - generic [ref=e39]: MADEX 智能体
+          - listitem [ref=e40]:
+            - link "Clawmask 钱包" [ref=e438] [cursor=pointer]:
+              - /url: /wallet
+              - img [ref=e42]
+              - generic [ref=e46]: Clawmask 钱包
+          - listitem [ref=e47]:
+            - link "设置" [ref=e439] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e49]
+              - generic [ref=e52]: 设置
+        - generic [ref=e55]:
+          - button "切换为模拟环境" [ref=e440]
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - img [ref=e60]
+              - generic [ref=e62]: 2026/03/20
+            - button "消息入口" [ref=e441]:
+              - img
+              - generic [ref=e64]: 消息入口
+      - list [ref=e66]:
+        - listitem [ref=e67]:
+          - button "CN 用户 0001 13900000001" [ref=e442]:
+            - generic [ref=e70]: CN
+            - generic [ref=e71]:
+              - generic [ref=e72]: 用户 0001
+              - generic [ref=e73]: "13900000001"
+            - img [ref=e74]
+    - main [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e82]:
+          - button "Toggle Sidebar" [ref=e443]:
+            - img
+            - generic [ref=e84]: Toggle Sidebar
+          - separator [ref=e85]
+          - heading "Clawmask 钱包" [level=1] [ref=e444]
+        - generic [ref=e87]:
+          - generic [ref=e89]:
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]:
+                  - generic [ref=e94]: CryptoKing
+                  - generic [ref=e95]: Clawmask 钱包
+                - generic [ref=e96]:
+                  - generic [ref=e97]: 钱包地址
+                  - generic [ref=e98]: MA654165******1d6E5
+                  - button "复制" [ref=e445]
+                  - button "二维码" [ref=e446]
+              - button "如何赚取 MA？" [ref=e447]
+            - generic [ref=e102]:
+              - generic [ref=e103]:
+                - paragraph [ref=e104]: 当前余额
+                - paragraph [ref=e105]: 300 MA
+              - generic [ref=e106]: MA 作为交易与提币 gas 代币使用
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - img [ref=e111]
+                - generic [ref=e114]:
+                  - generic [ref=e115]: 充币
+                  - generic [ref=e116]: 向你的钱包充值 MA
+              - button "立即充币" [ref=e448]
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - img [ref=e122]
+                - generic [ref=e125]:
+                  - generic [ref=e126]: 提币
+                  - generic [ref=e127]: 将资产提取到外部地址
+              - button "立即提币" [active] [ref=e449]
+            - generic [ref=e130]:
+              - generic [ref=e131]:
+                - img [ref=e133]
+                - generic [ref=e136]:
+                  - generic [ref=e137]: 转账
+                  - generic [ref=e138]: 转账给其他 Clawmask 用户
+              - button "立即转账" [ref=e450]
+          - tablist [ref=e143]:
+            - tab "MA 交易记录" [selected] [ref=e451]
+            - tab "MA 充提记录" [ref=e452]
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - generic [ref=e149]: MA 交易记录
+              - generic [ref=e150]: 展示交易过程中产生的 MA 消耗和资产变化。
+            - table [ref=e153]:
+              - rowgroup [ref=e154]:
+                - row "记录 ID 智能体 Skill 交易类型 金额 消耗 MA 时间" [ref=e453]:
+                  - columnheader "记录 ID" [ref=e454]
+                  - columnheader "智能体 Skill" [ref=e455]
+                  - columnheader "交易类型" [ref=e456]
+                  - columnheader "金额" [ref=e457]
+                  - columnheader "消耗 MA" [ref=e458]
+                  - columnheader "时间" [ref=e459]
+              - rowgroup [ref=e162]:
+                - row "MA587765461 币安智能体 Skill 买入 1,280 U -0.18 MA 2026-03-10 10:21:18" [ref=e460]:
+                  - cell "MA587765461" [ref=e461]
+                  - cell "币安智能体 Skill" [ref=e462]
+                  - cell "买入" [ref=e463]
+                  - cell "1,280 U" [ref=e464]
+                  - cell "-0.18 MA" [ref=e465]
+                  - cell "2026-03-10 10:21:18" [ref=e466]
+                - row "MA587765462 币安智能体 Skill 卖出 1,000 U -0.18 MA 2026-03-10 10:20:00" [ref=e467]:
+                  - cell "MA587765462" [ref=e468]
+                  - cell "币安智能体 Skill" [ref=e469]
+                  - cell "卖出" [ref=e470]
+                  - cell "1,000 U" [ref=e471]
+                  - cell "-0.18 MA" [ref=e472]
+                  - cell "2026-03-10 10:20:00" [ref=e473]
+                - row "MA587765463 欧易智能体 Skill 平仓 1,998 U -0.18 MA 2026-03-10 10:19:38" [ref=e474]:
+                  - cell "MA587765463" [ref=e475]
+                  - cell "欧易智能体 Skill" [ref=e476]
+                  - cell "平仓" [ref=e477]
+                  - cell "1,998 U" [ref=e478]
+                  - cell "-0.18 MA" [ref=e479]
+                  - cell "2026-03-10 10:19:38" [ref=e480]
+                - row "MA587765464 MADEX 智能体 Skill 买入 1,280 U -0.18 MA 2026-03-10 10:10:38" [ref=e481]:
+                  - cell "MA587765464" [ref=e482]
+                  - cell "MADEX 智能体 Skill" [ref=e483]
+                  - cell "买入" [ref=e484]
+                  - cell "1,280 U" [ref=e485]
+                  - cell "-0.18 MA" [ref=e486]
+                  - cell "2026-03-10 10:10:38" [ref=e487]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e196] [cursor=pointer]:
+    - img [ref=e197]
+  - alert [ref=e200]
