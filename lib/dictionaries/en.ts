@@ -57,6 +57,7 @@ const en = {
     confirmWithdraw: "Confirm Withdraw",
     transferTitle: "Transfer",
     transferDialogDesc: "Only supports transfers between platform users. Instant arrival.",
+    selectCurrency: "Select Currency",
     recipientPhone: "Recipient Phone",
     recipientPhonePlaceholder: "Enter recipient phone number",
     recipientPhoneHint: "Enter a registered Clawmask phone number",
@@ -173,7 +174,6 @@ const en = {
     investRange: "Investment Amount",
     maCost: "MA Cost",
     purchased: "Purchased",
-    continueBuy: "Continue Buy",
   },
   // Settings
   settings: {
@@ -291,6 +291,6 @@ const en = {
       madex: "MADEX Agent Skill",
     },
   },
-} as const
+}
 
 export default en

@@ -50,7 +50,7 @@ export function WalletDashboard() {
   const [depositCurrency, setDepositCurrency] = React.useState("MA")
   const [withdrawCurrency, setWithdrawCurrency] = React.useState("MA")
   const [transferCurrency, setTransferCurrency] = React.useState("MA")
-  const records = (tab === "trade" ? walletTradeRecords : walletTransferRecords) as WalletRecord[] | WalletTransferRecord[]
+  const records = tab === "trade" ? walletTradeRecords : walletTransferRecords
   const selectedChainOption = chainOptions.find((c) => c.id === selectedChain)
   const withdrawChainOption = chainOptions.find((c) => c.id === withdrawChain)
   const currencyOptions = [
@@ -215,20 +215,20 @@ export function WalletDashboard() {
                     {tab === "trade" ? (
                       <>
                         <td className="py-4 dark:text-white/80 text-slate-600">{record.id}</td>
-                        <td className="py-4 text-[var(--cm-primary)]/60">{record.target}</td>
+                        <td className="py-4 text-[var(--cm-primary)]/60">{(record as WalletRecord).target}</td>
                         <td className={`py-4 ${record.type === "买入" || record.type === "充币" ? "text-[var(--cm-success)]" : record.type === "卖出" || record.type === "提币" ? "text-[var(--cm-danger)]" : "dark:text-white/40 text-slate-400"}`}>
                           {record.type}
                         </td>
-                        <td className="py-4 dark:text-white/40 text-slate-500">{record.price ?? "-"}</td>
+                        <td className="py-4 dark:text-white/40 text-slate-500">{(record as WalletRecord).price ?? "-"}</td>
                         <td className="py-4 dark:text-white/40 text-slate-500">{record.amount}</td>
-                        <td className="py-4 text-[var(--cm-primary)]/60">{record.tradePair ?? "-"}</td>
+                        <td className="py-4 text-[var(--cm-primary)]/60">{(record as WalletRecord).tradePair ?? "-"}</td>
                         <td className="py-4 text-[var(--cm-success)] font-bold">{record.maCost}</td>
                         <td className="py-4 dark:text-white/30 text-slate-400">{record.time}</td>
                       </>
                     ) : (
                       <>
                         <td className="py-4 dark:text-white/80 text-slate-600">{record.id}</td>
-                        <td className="py-4 text-[var(--cm-primary)]/60">{record.targetAddress}</td>
+                        <td className="py-4 text-[var(--cm-primary)]/60">{(record as WalletTransferRecord).targetAddress}</td>
                         <td className={`py-4 ${record.type === "买入" || record.type === "充币" ? "text-[var(--cm-success)]" : record.type === "卖出" || record.type === "提币" ? "text-[var(--cm-danger)]" : "dark:text-white/40 text-slate-400"}`}>
                           {record.type}
                         </td>
@@ -251,7 +251,7 @@ export function WalletDashboard() {
                   <>
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-mono dark:text-white/80 text-slate-600">{record.id}</span>
-                      <span className="text-xs text-[var(--cm-primary)]/60">{record.target}</span>
+                      <span className="text-xs text-[var(--cm-primary)]/60">{(record as WalletRecord).target}</span>
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] dark:text-white/30 text-slate-400 uppercase">{t.table.tradeType}</span>
@@ -261,7 +261,7 @@ export function WalletDashboard() {
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] dark:text-white/30 text-slate-400 uppercase">{t.table.price}</span>
-                      <span className="text-xs dark:text-white/40 text-slate-500 font-mono">{record.price ?? "-"}</span>
+                      <span className="text-xs dark:text-white/40 text-slate-500 font-mono">{(record as WalletRecord).price ?? "-"}</span>
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] dark:text-white/30 text-slate-400 uppercase">{t.table.amount}</span>
@@ -269,7 +269,7 @@ export function WalletDashboard() {
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] dark:text-white/30 text-slate-400 uppercase">{t.table.tradePair}</span>
-                      <span className="text-xs text-[var(--cm-primary)]/60 font-mono">{record.tradePair ?? "-"}</span>
+                      <span className="text-xs text-[var(--cm-primary)]/60 font-mono">{(record as WalletRecord).tradePair ?? "-"}</span>
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] dark:text-white/30 text-slate-400 uppercase">{t.table.maCost}</span>
@@ -281,7 +281,7 @@ export function WalletDashboard() {
                   <>
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-mono dark:text-white/80 text-slate-600">{record.id}</span>
-                      <span className="text-xs text-[var(--cm-primary)]/60 truncate max-w-[180px]">{record.targetAddress}</span>
+                      <span className="text-xs text-[var(--cm-primary)]/60 truncate max-w-[180px]">{(record as WalletTransferRecord).targetAddress}</span>
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] dark:text-white/30 text-slate-400 uppercase">{t.table.tradeType}</span>

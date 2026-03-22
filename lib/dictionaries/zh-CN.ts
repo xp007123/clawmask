@@ -294,6 +294,6 @@ const zhCN = {
       madex: "MADEX 智能体 Skill",
     },
   },
-} as const
+}
 
 export default zhCN

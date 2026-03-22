@@ -640,7 +640,6 @@ export function AgentDashboard({
                                       message.suggestion.id
                                     )}
                                     onBuy={handleBuySuggestion}
-                                    t={t}
                                   />
                                 ) : null}
                               </div>
